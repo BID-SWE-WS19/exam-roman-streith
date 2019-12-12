@@ -24,55 +24,48 @@ namespace BID.SWE.EXAM.Impl
                 run
             };
         }
+    }
 
-
-        public class Map1 : Map {
-            public override string GetMapName()
-            {
-                return "BID-Map";
-            }
-
-            public override float GetMapSize(float amount)
-            {
-                return amount * amount;
-            }
-
-            public override int AddNewCells(int year)
-            {
-                return year;
-            }
+    public class Map1 : Map {
+        public override string GetMapName() {
+            return "BID-Map";
         }
 
-        public abstract class Bewegung {
-            public virtual string Position()
-            {
-                return "Position";
-            }
-
-            public virtual string Move()
-            {
-                return "Move";
-            }
+        public override float GetMapSize(float amount) {
+            return amount * amount;
         }
 
-        public class Laufen : Bewegung {
-            public override string Position() {
-                return "Ground";
-            }
-
-            public override string Move() {
-                return "Right";
-            }
+        public override int AddNewCells(int year) {
+            return year;
         }
-        public class Springen : Bewegung {
-            public override string Position() {
-                return "Air";
-            }
+    }
 
-            public override string Move() {
-                return "Up";
-            }
+    public abstract class Bewegung {
+        public virtual string Position() {
+            return "Position";
         }
 
+        public virtual string Move() {
+            return "Move";
+        }
+    }
+
+    public class Laufen : Bewegung {
+        public override string Position() {
+            return "Ground";
+        }
+
+        public override string Move() {
+            return "Right";
+        }
+    }
+    public class Springen : Bewegung {
+        public override string Position() {
+            return "Air";
+        }
+
+        public override string Move() {
+            return "Up";
+        }
     }
 }

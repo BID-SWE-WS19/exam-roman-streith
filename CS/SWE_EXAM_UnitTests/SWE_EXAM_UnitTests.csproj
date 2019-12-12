@@ -16,4 +16,10 @@
     <ProjectReference Include="..\BID.SWE.EXAM.Impl\BID.SWE.EXAM.Impl.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="BID.SWE1.Exam.Interfaces">
+      <HintPath>..\BID.SWE.EXAM.Impl\lib\BID.SWE1.Exam.Interfaces.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
