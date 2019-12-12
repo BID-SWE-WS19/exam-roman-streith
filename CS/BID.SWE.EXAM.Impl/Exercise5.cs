@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net.Sockets;
 using BID.SWE1.Exam.Interfaces;
+
 
 namespace BID.SWE.EXAM.Impl
 {
@@ -8,7 +12,21 @@ namespace BID.SWE.EXAM.Impl
        
         public object Method1(string str, int i)
         {
-            throw new NotImplementedException();
+
+            var client = new TcpClient();
+            client.Connect(str, i);
+
+            var stream = client.GetStream();
+            var reader = new StreamReader(stream);
+
+            List<string> results = new List<string>();
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                results.Add(line);
+            }
+
+            return results;
         }
     }
 }
