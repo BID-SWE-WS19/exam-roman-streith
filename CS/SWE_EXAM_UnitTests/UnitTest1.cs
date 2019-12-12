@@ -32,11 +32,19 @@ namespace SWE_EXAM_UnitTests {
         }
 
 
-        [Test] // Dieser Test verhindert das Compilieren
+        [Test]
         public void Cell_Grow() {
             var obj = new MyCell();
             int result = obj.Grow();
             Assert.AreEqual(result, 2);
+        }
+
+        [Test]
+        public void Cell_Grow2() {
+            var obj = new MyCell();
+            int result = obj.Grow();
+            result = obj.Grow();
+            Assert.AreEqual(result, 4);
         }
 
         [Test]
